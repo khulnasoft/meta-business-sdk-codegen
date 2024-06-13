@@ -1,0 +1,17 @@
+{
+    "apis": [],
+    "fields": [
+        {
+            "name": "home_listing",
+            "type": "Object"
+        },
+        {
+            "name": "product_item",
+            "type": "Object"
+        },
+        {
+            "name": "vehicle",
+            "type": "Object"
+        }
+    ]
+}

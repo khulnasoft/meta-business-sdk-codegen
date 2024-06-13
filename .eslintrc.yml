@@ -1,0 +1,19 @@
+---
+extends: fbjs
+env:
+  node: true
+rules:
+  flowtype/object-type-delimiter: off
+  no-bitwise: 0
+  no-console: 0
+  no-eval: warn
+  no-undef: warn
+  no-unreachable: warn
+  max-len:
+    - warn
+    - ignoreComments: true
+      ignorePattern: ^import\s.+\sfrom\s.+;$
+      ignoreStrings: true
+  radix:
+    - warn
+    - as-needed

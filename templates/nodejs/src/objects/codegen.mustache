@@ -1,0 +1,102 @@
+ /*
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ * All rights reserved.
+ *
+ * This source code is licensed under the license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
+ */
+
+import {AbstractCrudObject} from './../abstract-crud-object';
+{{#has_generic_reference}}
+import AbstractObject from './../abstract-object';
+{{/has_generic_reference}}
+{{#has_read_edges}}
+import Cursor from './../cursor';
+{{/has_read_edges}}
+{{#references}}
+import {{{name:pascal_case}}} from './{{name:hyphen}}';
+{{/references}}
+{{> /src/objects/%name:hyphen%.extra_use}}
+
+/**
+ * {{name:pascal_case}}
+ * @extends AbstractCrudObject
+ * @see {@link https://developers.facebook.com/docs/marketing-api/}
+ */
+export default class {{name:pascal_case}} extends AbstractCrudObject {
+  static get Fields (): Object {
+    return Object.freeze({
+      {{#fields}}
+      {{^is_creation_field}}
+      {{api_name:underscore_excluding_digit_suffix}}: '{{api_name}}',
+      {{/is_creation_field}}
+      {{/fields}}
+    });
+  }
+
+  {{#api_spec_based_enum_reference}}
+  static get {{field_or_param:pascal_case}} (): Object {
+    return Object.freeze({
+      {{#values_with_naming_convention}}
+      {{{value:all_lower_case_excluding_digit_suffix}}}: '{{{value:escape_single_quote}}}',
+      {{/values_with_naming_convention}}
+    });
+  }
+  {{/api_spec_based_enum_reference}}
+{{#apis}}
+
+{{^is_node_api}}
+  {{name:camel_case}} ({{^is_method_delete}}fields: Array<string>, {{/is_method_delete}}params: Object = {}{{#is_method_get}}, fetchFirstPage: boolean = true{{/is_method_get}}{{#is_method_post}}, pathOverride?: ?string = null{{/is_method_post}}): {{#is_method_get}}Cursor | Promise<*>{{/is_method_get}}{{#is_method_delete}}Promise<*>{{/is_method_delete}}{{#is_method_post}}Promise<{{#return}}{{return}}{{/return}}{{^return}}AbstractObject{{/return}}>{{/is_method_post}} {
+{{#is_method_get}}
+    return this.getEdge(
+      {{#return}}{{return}}{{/return}}{{^return}}AbstractObject{{/return}},
+      fields,
+      params,
+      fetchFirstPage,
+      '{{{endpoint}}}'
+    );
+{{/is_method_get}}
+{{#is_method_post}}
+    return this.createEdge(
+      '{{{endpoint}}}',
+      fields,
+      params,
+      {{#return}}{{return}}{{/return}}{{^return}}null{{/return}},
+      pathOverride,
+    );
+{{/is_method_post}}
+{{#is_method_delete}}
+    return super.deleteEdge(
+      '{{{endpoint}}}',
+      params
+    );
+{{/is_method_delete}}
+  }
+{{/is_node_api}}
+{{#is_node_api}}
+  {{#is_method_post}}// $FlowFixMe : Support Generic Types{{/is_method_post}}{{#is_method_delete}}// $FlowFixMe : Support Generic Types{{/is_method_delete}}
+  {{name:camel_case}} (fields: Array<string>, params: Object = {}): {{#return}}{{return}}{{/return}}{{^return}}AbstractObject{{/return}} {
+    // $FlowFixMe : Support Generic Types
+{{#is_method_get}}
+    return this.read(
+      fields,
+      params
+    );
+{{/is_method_get}}
+{{#is_method_post}}
+    return super.update(
+      params
+    );
+{{/is_method_post}}
+{{#is_method_delete}}
+    return super.delete(
+      params
+    );
+{{/is_method_delete}}
+  }
+{{/is_node_api}}
+{{/apis}}
+{{> /src/objects/%name:hyphen%.extra_functions}}
+}

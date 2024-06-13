@@ -1,34 +1,45 @@
 {
-  "author": "KhulnaSoft Ltd <info@khulnasoft.com> (https://github.com/KhulnaSoft)",
-  "name": "fb",
-  "description": "NodeJS Library for Meta",
-  "keywords": [
-    "facebook",
-    "fb",
-    "graph"
-  ],
-  "version": "0.7.3",
-  "homepage": "https://github.com/KhulnaSoft/meta-node-sdk",
+  "name": "meta-business-sdk-codegen",
+  "version": "0.2.0",
+  "description": "Codegen project for our business SDKs",
+  "homepage": "https://github.com/khulnasoft/meta-business-sdk-codegen#readme",
+  "license": "MIT",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/KhulnaSoft/meta-node-sdk.git"
+    "url": "git+https://github.com/khulnasoft/meta-business-sdk-codegen.git"
   },
-  "engines": {
-    "node": ">=0.6.9"
+  "bugs": {
+    "url": "https://github.com/khulnasoft/meta-business-sdk-codegen/issues"
+  },
+  "scripts": {
+    "format": "./node_modules/.bin/eslint --fix \"src/**/*.js\" && prettier --write \"src/**/*.js\"",
+    "flow": "flow",
+    "build": "babel src/ -d lib/",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "request": "2.9.x",
-    "crypto": "0.0.3"
+    "fs-extra": "^2.1.2",
+    "invariant": "^2.2.2",
+    "js-beautify": "^1.5.10",
+    "jsonpath-plus": "^0.15.0",
+    "merge": "^2.1.1",
+    "mustache": "^2.1.3",
+    "pluralize": "^2.0.0",
+    "promise": "^7.0.3"
   },
   "devDependencies": {
-    "nock": "~0.17.2",
-    "mocha": "~1.9.0",
-    "should": "~1.2.2"
-  },
-  "optionalDependencies": {},
-  "main": "./fb.js",
-  "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --recursive --reporter spec",
-    "testw": "node ./node_modules/mocha/bin/mocha --recursive --watch --reporter spec"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.16.0",
+    "eslint-config-fbjs": "^3.1.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-flowtype": "^2.43.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "flow-bin": "^0.98.1",
+    "prettier": "^1.17.1"
   }
 }

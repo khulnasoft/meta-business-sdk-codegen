@@ -1,0 +1,25 @@
+{
+    "apis": [],
+    "fields": [
+        {
+            "name": "amount",
+            "type": "int"
+        },
+        {
+            "name": "campaign_ids",
+            "type": "list<int>"
+        },
+        {
+            "name": "currency",
+            "type": "string"
+        },
+        {
+            "name": "display_amount",
+            "type": "string"
+        },
+        {
+            "name": "expiration",
+            "type": "datetime"
+        }
+    ]
+}
