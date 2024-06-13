@@ -85,6 +85,23 @@
         },
         {
             "method": "GET",
+            "endpoint": "onsite_conversion_events",
+            "return": "CommerceOnsiteConversionEvent",
+            "params": [
+                {
+                    "name": "created_after",
+                    "required": false,
+                    "type": "datetime"
+                },
+                {
+                    "name": "created_before",
+                    "required": false,
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "method": "GET",
             "endpoint": "order_management_apps",
             "return": "Application",
             "params": []
@@ -127,6 +144,12 @@
                     "type": "list<commercemerchantsettingsreturns_statuses_enum_param>"
                 }
             ]
+        },
+        {
+            "method": "GET",
+            "endpoint": "seller_issues",
+            "return": "CommerceAPISellerIssue",
+            "params": []
         },
         {
             "method": "GET",
@@ -194,6 +217,23 @@
             "endpoint": "tax_settings",
             "return": "CommerceMerchantTaxSettings",
             "params": []
+        },
+        {
+            "method": "POST",
+            "endpoint": "whatsapp_channel",
+            "return": "Object",
+            "params": [
+                {
+                    "name": "op",
+                    "required": true,
+                    "type": "commercemerchantsettingswhatsapp_channel_op_enum_param"
+                },
+                {
+                    "name": "whatsapp_business_accounts",
+                    "required": true,
+                    "type": "list<string>"
+                }
+            ]
         },
         {
             "name": "#get",
@@ -298,6 +338,10 @@
         {
             "name": "terms_url_by_locale",
             "type": "list<map<string, string>>"
+        },
+        {
+            "name": "whatsapp_channel",
+            "type": "Object"
         }
     ]
 }

@@ -34,10 +34,6 @@
             "type": "map<string, string>"
         },
         {
-            "name": "compromise",
-            "type": "map<string, string>"
-        },
-        {
             "name": "daily_deals",
             "type": "map<string, string>"
         },

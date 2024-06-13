@@ -1,9 +1,0 @@
-{
-    "apis": [],
-    "fields": [
-        {
-            "name": "body",
-            "type": "string"
-        }
-    ]
-}

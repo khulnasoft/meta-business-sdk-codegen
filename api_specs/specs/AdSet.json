@@ -140,33 +140,6 @@
             ]
         },
         {
-            "method": "POST",
-            "endpoint": "budget_schedules",
-            "return": "HighDemandPeriod",
-            "params": [
-                {
-                    "name": "budget_value",
-                    "required": true,
-                    "type": "unsigned int"
-                },
-                {
-                    "name": "budget_value_type",
-                    "required": true,
-                    "type": "adcampaignbudget_schedules_budget_value_type_enum_param"
-                },
-                {
-                    "name": "time_end",
-                    "required": true,
-                    "type": "unsigned int"
-                },
-                {
-                    "name": "time_start",
-                    "required": true,
-                    "type": "unsigned int"
-                }
-            ]
-        },
-        {
             "method": "GET",
             "endpoint": "copies",
             "return": "AdSet",
@@ -940,10 +913,6 @@
         {
             "name": "recurring_budget_semantics",
             "type": "bool"
-        },
-        {
-            "name": "regional_regulation_identities",
-            "type": "Object"
         },
         {
             "name": "review_feedback",

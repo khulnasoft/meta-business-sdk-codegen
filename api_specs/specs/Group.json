@@ -222,16 +222,6 @@
                     "type": "groupfeed_backdated_time_granularity_enum_param"
                 },
                 {
-                    "name": "breaking_news",
-                    "required": false,
-                    "type": "bool"
-                },
-                {
-                    "name": "breaking_news_expiration",
-                    "required": false,
-                    "type": "unsigned int"
-                },
-                {
                     "name": "call_to_action",
                     "required": false,
                     "type": "Object"
@@ -350,6 +340,11 @@
                     "name": "fun_fact_toastee_id",
                     "required": false,
                     "type": "unsigned int"
+                },
+                {
+                    "name": "has_nickname",
+                    "required": false,
+                    "type": "bool"
                 },
                 {
                     "name": "height",
@@ -1157,6 +1152,11 @@
                     "type": "string"
                 },
                 {
+                    "name": "scheduled_publish_time",
+                    "required": false,
+                    "type": "unsigned int"
+                },
+                {
                     "name": "spherical_metadata",
                     "required": false,
                     "type": "map"
@@ -1223,6 +1223,11 @@
             "endpoint": "picture",
             "return": "ProfilePictureSource",
             "params": [
+                {
+                    "name": "breaking_change",
+                    "required": false,
+                    "type": "grouppicture_breaking_change_enum_param"
+                },
                 {
                     "name": "height",
                     "required": false,
@@ -1404,6 +1409,11 @@
                 },
                 {
                     "name": "guide_enabled",
+                    "required": false,
+                    "type": "bool"
+                },
+                {
+                    "name": "has_nickname",
                     "required": false,
                     "type": "bool"
                 },

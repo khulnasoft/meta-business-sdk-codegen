@@ -334,6 +334,11 @@
                     "type": "string"
                 },
                 {
+                    "name": "scheduled_publish_time",
+                    "required": false,
+                    "type": "unsigned int"
+                },
+                {
                     "name": "spherical_metadata",
                     "required": false,
                     "type": "map"

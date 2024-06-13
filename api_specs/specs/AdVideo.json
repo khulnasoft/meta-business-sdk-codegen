@@ -661,7 +661,7 @@
         },
         {
             "name": "status",
-            "type": "VideoStatus"
+            "type": "Object"
         },
         {
             "name": "title",

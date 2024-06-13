@@ -106,9 +106,41 @@
         },
         {
             "method": "GET",
-            "endpoint": "dcc_config",
-            "return": "WhatsAppBusinessDirectConnectionExternalConfig",
+            "endpoint": "extensions",
+            "return": "WhatsAppExtension",
             "params": []
+        },
+        {
+            "method": "POST",
+            "endpoint": "extensions",
+            "return": "WhatsAppExtension",
+            "params": [
+                {
+                    "name": "categories",
+                    "required": true,
+                    "type": "list<whatsappbusinessaccountextensions_categories_enum_param>"
+                },
+                {
+                    "name": "clone_extension_id",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "clone_template",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "data_channel_uri",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                }
+            ]
         },
         {
             "method": "GET",
@@ -132,7 +164,12 @@
                     "type": "string"
                 },
                 {
-                    "name": "endpoint_uri",
+                    "name": "clone_template",
+                    "required": false,
+                    "type": "string"
+                },
+                {
+                    "name": "data_channel_uri",
                     "required": false,
                     "type": "string"
                 },
@@ -257,7 +294,7 @@
                 },
                 {
                     "name": "components",
-                    "required": false,
+                    "required": true,
                     "type": "list<map>"
                 },
                 {
@@ -268,16 +305,6 @@
                 {
                     "name": "language",
                     "required": true,
-                    "type": "string"
-                },
-                {
-                    "name": "library_template_button_inputs",
-                    "required": false,
-                    "type": "list<map>"
-                },
-                {
-                    "name": "library_template_name",
-                    "required": false,
                     "type": "string"
                 },
                 {
@@ -386,12 +413,6 @@
             "method": "GET",
             "endpoint": "schedules",
             "return": "WhatsAppBusinessCampaignSchedule",
-            "params": []
-        },
-        {
-            "method": "POST",
-            "endpoint": "set_obo_mobility_intent",
-            "return": "WhatsAppBusinessAccountOBOMobilityIntent",
             "params": []
         },
         {
@@ -549,20 +570,12 @@
             "type": "string"
         },
         {
-            "name": "health_status",
-            "type": "WhatsAppBusinessHealthStatusForMessageSend"
-        },
-        {
             "name": "id",
             "type": "string"
         },
         {
             "name": "is_enabled_for_insights",
             "type": "bool"
-        },
-        {
-            "name": "linked_commerce_account",
-            "type": "CommerceMerchantSettings"
         },
         {
             "name": "message_template_namespace",

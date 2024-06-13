@@ -4,18 +4,6 @@
         {
             "name": "associated_product_set_id",
             "type": "string"
-        },
-        {
-            "name": "promotion_metadata_spec",
-            "type": "list<AdCreativePromotionMetadataSpec>"
-        },
-        {
-            "name": "site_links_spec",
-            "type": "list<AdCreativeSiteLinksSpec>"
-        },
-        {
-            "name": "source_url",
-            "type": "string"
         }
     ]
 }

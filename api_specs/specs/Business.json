@@ -1117,11 +1117,6 @@
                     "type": "list<string>"
                 },
                 {
-                    "name": "skip_partner_page_creation",
-                    "required": false,
-                    "type": "bool"
-                },
-                {
                     "name": "survey_business_type",
                     "required": false,
                     "type": "businessmanaged_partner_businesses_survey_business_type_enum_param"
@@ -1431,11 +1426,6 @@
             "return": "ProductCatalog",
             "params": [
                 {
-                    "name": "additional_vertical_option",
-                    "required": false,
-                    "type": "businessowned_product_catalogs_additional_vertical_option_enum_param"
-                },
-                {
                     "name": "catalog_segment_filter",
                     "required": false,
                     "type": "Object"
@@ -1602,6 +1592,11 @@
             "return": "ProfilePictureSource",
             "params": [
                 {
+                    "name": "breaking_change",
+                    "required": false,
+                    "type": "businesspicture_breaking_change_enum_param"
+                },
+                {
                     "name": "height",
                     "required": false,
                     "type": "int"
@@ -1660,18 +1655,6 @@
                     "name": "request_status",
                     "required": false,
                     "type": "businessreceived_audience_sharing_requests_request_status_enum_param"
-                }
-            ]
-        },
-        {
-            "method": "GET",
-            "endpoint": "self_certified_whatsapp_business_submissions",
-            "return": "WhatsAppBusinessPartnerClientVerificationSubmission",
-            "params": [
-                {
-                    "name": "end_business_id",
-                    "required": false,
-                    "type": "string"
                 }
             ]
         },
@@ -1969,6 +1952,11 @@
                 },
                 {
                     "name": "guide_enabled",
+                    "required": false,
+                    "type": "bool"
+                },
+                {
+                    "name": "has_nickname",
                     "required": false,
                     "type": "bool"
                 },

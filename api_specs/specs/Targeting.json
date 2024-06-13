@@ -14,10 +14,6 @@
             "type": "unsigned int"
         },
         {
-            "name": "age_range",
-            "type": "list<unsigned int>"
-        },
-        {
             "name": "alternate_auto_targeting_option",
             "type": "string"
         },
@@ -324,10 +320,6 @@
         {
             "name": "site_category",
             "type": "list<string>"
-        },
-        {
-            "name": "targeting_automation",
-            "type": "TargetingAutomation"
         },
         {
             "name": "targeting_optimization",

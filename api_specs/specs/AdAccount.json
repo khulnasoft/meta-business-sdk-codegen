@@ -764,6 +764,11 @@
                     "type": "bool"
                 },
                 {
+                    "name": "meta_reward_adgroup_status",
+                    "required": false,
+                    "type": "adaccountads_meta_reward_adgroup_status_enum_param"
+                },
+                {
                     "name": "name",
                     "required": true,
                     "type": "string"
@@ -1409,6 +1414,11 @@
                     "type": "bool"
                 },
                 {
+                    "name": "has_nickname",
+                    "required": false,
+                    "type": "bool"
+                },
+                {
                     "name": "holiday_card",
                     "required": false,
                     "type": "string"
@@ -1640,23 +1650,6 @@
             "params": []
         },
         {
-            "method": "POST",
-            "endpoint": "agencies",
-            "return": "AdAccount",
-            "params": [
-                {
-                    "name": "business",
-                    "required": true,
-                    "type": "string"
-                },
-                {
-                    "name": "permitted_tasks",
-                    "required": false,
-                    "type": "list<adaccountagencies_permitted_tasks_enum_param>"
-                }
-            ]
-        },
-        {
             "method": "GET",
             "endpoint": "applications",
             "return": "Application",
@@ -1775,12 +1768,6 @@
                     "type": "string"
                 }
             ]
-        },
-        {
-            "method": "GET",
-            "endpoint": "audience_funnel",
-            "return": "AudienceFunnel",
-            "params": []
         },
         {
             "method": "POST",
@@ -2009,26 +1996,8 @@
         },
         {
             "method": "GET",
-            "endpoint": "connected_instagram_accounts_with_iabp",
-            "return": "InstagramUser",
-            "params": [
-                {
-                    "name": "business_id",
-                    "required": false,
-                    "type": "string"
-                }
-            ]
-        },
-        {
-            "method": "GET",
             "endpoint": "conversion_goals",
             "return": "AdsConversionGoal",
-            "params": []
-        },
-        {
-            "method": "GET",
-            "endpoint": "cpa_guidance",
-            "return": "BespokePartnerGuidanceLaser",
             "params": []
         },
         {
@@ -2237,11 +2206,6 @@
                     "name": "video_group_ids",
                     "required": false,
                     "type": "list<string>"
-                },
-                {
-                    "name": "whats_app_business_phone_number_id",
-                    "required": false,
-                    "type": "string"
                 }
             ]
         },
@@ -3352,16 +3316,6 @@
                     "type": "list<string>"
                 },
                 {
-                    "name": "is_account_level_brand_safety_exclusion",
-                    "required": false,
-                    "type": "bool"
-                },
-                {
-                    "name": "is_account_level_employer_exclusion",
-                    "required": false,
-                    "type": "bool"
-                },
-                {
                     "name": "is_exclusion",
                     "required": false,
                     "type": "bool"
@@ -3577,12 +3531,6 @@
         },
         {
             "method": "GET",
-            "endpoint": "value_adjustment_rule_collections",
-            "return": "AdsValueAdjustmentRuleCollection",
-            "params": []
-        },
-        {
-            "method": "GET",
             "endpoint": "value_adjustment_rules",
             "return": "AdsValueAdjustmentRule",
             "params": []
@@ -3722,10 +3670,6 @@
         {
             "name": "balance",
             "type": "string"
-        },
-        {
-            "name": "brand_safety_content_filter_levels",
-            "type": "list<string>"
         },
         {
             "name": "business",

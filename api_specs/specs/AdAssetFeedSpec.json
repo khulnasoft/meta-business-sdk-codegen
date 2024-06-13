@@ -7,7 +7,7 @@
         },
         {
             "name": "additional_data",
-            "type": "AdAssetFeedAdditionalData"
+            "type": "Object"
         },
         {
             "name": "app_product_page_id",
@@ -31,7 +31,7 @@
         },
         {
             "name": "call_to_actions",
-            "type": "list<AdAssetFeedSpecCallToAction>"
+            "type": "list<Object>"
         },
         {
             "name": "captions",
@@ -39,7 +39,7 @@
         },
         {
             "name": "carousels",
-            "type": "list<AdAssetFeedSpecCarousel>"
+            "type": "list<Object>"
         },
         {
             "name": "descriptions",
@@ -47,7 +47,7 @@
         },
         {
             "name": "events",
-            "type": "list<AdAssetFeedSpecEvents>"
+            "type": "list<Object>"
         },
         {
             "name": "groups",
@@ -66,24 +66,8 @@
             "type": "list<AdAssetMessageExtensions>"
         },
         {
-            "name": "onsite_destinations",
-            "type": "list<AdAssetOnsiteDestinations>"
-        },
-        {
             "name": "optimization_type",
             "type": "string"
-        },
-        {
-            "name": "promotional_metadata",
-            "type": "Object"
-        },
-        {
-            "name": "reasons_to_shop",
-            "type": "bool"
-        },
-        {
-            "name": "shops_bundle",
-            "type": "bool"
         },
         {
             "name": "titles",

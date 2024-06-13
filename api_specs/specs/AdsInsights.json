@@ -118,10 +118,6 @@
             "type": "string"
         },
         {
-            "name": "conversion_lead_rate",
-            "type": "string"
-        },
-        {
             "name": "conversion_rate_ranking",
             "type": "string"
         },
@@ -160,10 +156,6 @@
         {
             "name": "cost_per_conversion",
             "type": "list<AdsActionStats>"
-        },
-        {
-            "name": "cost_per_conversion_lead",
-            "type": "string"
         },
         {
             "name": "cost_per_dda_countby_convs",
@@ -351,10 +343,6 @@
         },
         {
             "name": "marketing_messages_spend",
-            "type": "string"
-        },
-        {
-            "name": "marketing_messages_website_purchase_values",
             "type": "string"
         },
         {

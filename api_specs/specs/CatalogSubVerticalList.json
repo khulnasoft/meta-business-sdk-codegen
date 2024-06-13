@@ -118,6 +118,10 @@
             "type": "Object"
         },
         {
+            "name": "meetup_space",
+            "type": "Object"
+        },
+        {
             "name": "nursery",
             "type": "Object"
         },
